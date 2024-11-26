@@ -8,10 +8,15 @@ is true. If function is None, return the items that are true."""
     return (item for item in iterable if fonction(item))
 
 
-print(ft_filter.__doc__)
-# def est_pair(x):
-#     return x % 2 == 0
+def main():
+    def est_pair(x):
+        return x % 2 == 0
 
-# nombres = [1, 2, 3, 4, 5, 6]
-# nombres_pairs = ft_filter(est_pair, nombres)
-# print(list(nombres_pairs))  # [2, 4, 6]
+    print(ft_filter.__doc__)
+    numbers = [1, 2, 3, 4, 5, 6]
+    pairs = ft_filter(est_pair, numbers)
+    print(list(pairs))  # [2, 4, 6]
+
+
+if __name__ == "__main__":
+    main()
