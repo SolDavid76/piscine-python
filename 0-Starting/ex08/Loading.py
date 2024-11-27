@@ -1,5 +1,4 @@
 import shutil
-from time import sleep
 
 
 def ft_tqdm(lst: range) -> None:
