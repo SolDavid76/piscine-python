@@ -2,6 +2,9 @@ import sys
 
 
 def encode_morse(text: str) -> str:
+    """
+    Retrun the given string in morse code
+    """
     morse = {
         ' ': '/',
         'A': '.-',
