@@ -7,7 +7,8 @@ import os
 def main():
     """
     This function opens '../animal.jpeg',
-    crops it to 400x400 pixels.
+    crops it to 400x400 pixels,
+    and rotates it 90 degrees to the left.
     """
     try:
         path = "../animal.jpeg"
@@ -19,14 +20,19 @@ def main():
 
         zoomed_img = img.crop((400, 100, 800, 500))
         grey_img = zoomed_img.convert("L")
-        print(zoomed_img.convert.__doc__)
-        print(f"The shape of image is: {img.size[1], img.size[0], img.layers}")
+        grey_array = np.asarray(grey_img)
+        transposed_array = [
+            [grey_array[j][i] for j in range(len(grey_array))]
+            for i in range(len(grey_array[0]))
+        ]
+
+        print(f"The shape of image is: {grey_img.size}")
         print(np.asarray(img))
-        print(f"New chape after slicing: {grey_img.size}")
-        print(np.asarray(grey_img))
+        print(f"New shape after Transpose: {grey_img.size}")
+        print(np.array(transposed_array))
 
         plt.rcParams["toolbar"] = "None"
-        plt.imshow(grey_img, cmap="grey")
+        plt.imshow(transposed_array, cmap="grey")
         plt.show()
     except AssertionError as error:
         print("AssertionError:", error)

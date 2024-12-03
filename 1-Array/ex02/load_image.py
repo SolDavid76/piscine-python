@@ -9,11 +9,11 @@ def ft_load(path: str) -> list:
 
     This function take one parameter:
     1. string to determine the path of image to load
-    The function return a list[list[list[int]]] wtich represent all the pixels
+    The function return a array wtich represent all the pixels
     """
     try:
         if not os.path.exists(path):
-            raise AssertionError("File not found")
+            raise AssertionError(f"File not found({path})")
         if not path.lower().endswith((".jpg", ".jpeg")):
             raise AssertionError("Only JPG and JPEG formats are supported")
         img = Image.open(path)
