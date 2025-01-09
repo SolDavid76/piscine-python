@@ -3,6 +3,13 @@ import os
 
 
 def load(path: str) -> pandas.DataFrame:
+    """
+    load(path: str) -> Dataset
+
+    This function take one parameter:
+    1. string to determine the path of data to load
+    The function return a array of array
+    """
     try:
         if not os.path.exists(path):
             raise AssertionError(f"File not found({path})")
