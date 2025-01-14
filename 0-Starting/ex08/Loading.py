@@ -8,7 +8,7 @@ def ft_tqdm(lst: range) -> None:
     for i, item in enumerate(lst, start=1):
         progress = int(i / total * bar_width)
         percentage = f"{int(progress * 100 / bar_width):>3}%"
-        bar = f"|{'-' * progress:<{bar_width}}|"
+        bar = f"|{'█' * progress:<{bar_width}}|"
         total_progress = f" {i}/{total}"
         print(f"\r{percentage}{bar}{total_progress}", end="", flush=True)
         yield item
